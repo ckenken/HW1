@@ -10,7 +10,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -29,7 +28,7 @@ public class SetAlarmActivity extends AppCompatActivity {
     public TextView tv2;
     public TextView tv3;
 
-    public Button refreshButton;
+//    public Button refreshButton;
 
     AlarmBroasdCastReceiver updateReceiver;
 
@@ -170,7 +169,7 @@ public class SetAlarmActivity extends AppCompatActivity {
         tv2 = (TextView)findViewById(R.id.textView5);
         tv3 = (TextView)findViewById(R.id.textView6);
 
-        refreshButton = (Button)findViewById(R.id.button6);
+//        refreshButton = (Button)findViewById(R.id.button6);
 
         tv1.setOnClickListener(new TextOnclickListener(0));
         tv2.setOnClickListener(new TextOnclickListener(1));
@@ -184,13 +183,13 @@ public class SetAlarmActivity extends AppCompatActivity {
         cb2.setOnCheckedChangeListener(new CheckOnChangeListener(1));
         cb3.setOnCheckedChangeListener(new CheckOnChangeListener(2));
 
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SetAlarmActivity.this, TimeService.class);
-                SetAlarmActivity.this.startService(intent);
-            }
-        });
+//        refreshButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SetAlarmActivity.this, TimeService.class);
+//                SetAlarmActivity.this.startService(intent);
+//            }
+//        });
 
         updateReceiver = new AlarmBroasdCastReceiver();
     }

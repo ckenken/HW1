@@ -26,12 +26,10 @@ public class MainActivity extends AppCompatActivity {
     public static final int AM = 0;
     public static final int PM = 1;
 
-    public Button b1;
-    public Button b2;
     public Button setAlarmButton;
 
     private static TextView label;
-    public static SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss aaa");
+    public static SimpleDateFormat sdf = new SimpleDateFormat("EEE, MM/dd hh:mm aaa");
 
     public static int [] hour = new int[ALARM_NUM];
 
@@ -86,30 +84,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        b1 = (Button)findViewById(R.id.button);
-        b2 = (Button)findViewById(R.id.button2);
-        b1.setText("Start Time");
-        b2.setText("Stop Time");
 
         setAlarmButton = (Button)findViewById(R.id.button3);
 
         label = (TextView)findViewById(R.id.textView);
-
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(MainActivity.this, TimeService.class);
-                startService(startIntent);
-            }
-        });
-
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stopIntent = new Intent(MainActivity.this, TimeService.class);
-                stopService(stopIntent);
-            }
-        });
 
         setAlarmButton.setOnClickListener(new View.OnClickListener(){
             @Override

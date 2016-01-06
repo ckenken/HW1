@@ -64,7 +64,7 @@ public class TenMinuteService extends Service {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if (counter >= 10) { // 600
+                if (counter >= 600) { // 600
                     isRunning = false;
                     handler.obtainMessage(RING).sendToTarget();
                     break;
