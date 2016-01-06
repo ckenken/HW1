@@ -95,10 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SetAlarmActivity.class);
 
-            //    intent.putExtras(bundle);
-
                 startActivity(intent);
-             //   MainActivity.this.finish();
             }
         });
 
@@ -144,20 +141,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-//        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);	//mainｬOclass name
-//        builder.setTitle("Oops!");
-//        builder.setMessage("GG!!!");
-//
-//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//        });
-//
-//        builder.show();
 
         if (t1 == null) {
             t1 = new Thread(run1);

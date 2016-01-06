@@ -48,19 +48,6 @@ public class InputAlarmTimeActivity extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         id = b.getInt("check_id");
 
-//        String timeString = b.getString("check_time");
-//
-//        String [] SP = timeString.split(":");
-//
-//        int hour = Integer.parseInt(SP[0]);
-//        int min = Integer.parseInt(SP[1]);
-//
-//        Log.d("id:", Integer.toString(id));
-//        Log.d("time:", timeString);
-//
-//        edHour.setText(SP[0]);
-//        edMin.setText(SP[1]);
-
         edHour.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -87,7 +87,11 @@ public class TimeService extends Service {
                 Date d = c.getTime();
 
                 for(int i = 0; i<MainActivity.ALARM_NUM; i++) {
-                    if (!NotificationActivity.isRinging && MainActivity.a_on[i] && MainActivity.hour[i] == (d.getHours()%12) && MainActivity.min[i] == d.getMinutes() && checkAMPM(d) == MainActivity.ampm[i]) {
+                    if (!NotificationActivity.isRinging &&
+                            MainActivity.a_on[i] &&
+                            (MainActivity.hour[i] == (d.getHours()%12) || MainActivity.hour[i] == 12 && d.getHours() == 0) &&
+                            MainActivity.min[i] == d.getMinutes() &&
+                            checkAMPM(d) == MainActivity.ampm[i]) {
                         handler.obtainMessage(i).sendToTarget();
                     }
                 }
@@ -160,7 +164,6 @@ public class TimeService extends Service {
     @Override
     public void onDestroy() {
         Log.d("OnStopCommand", "22222");
-        //MainActivity.handler.obtainMessage(2).sendToTarget();
         runAlarm.stopThread();
         tAlarm.interrupt();
 
